@@ -1,0 +1,422 @@
+/*
+ * Apple Human Interface Guidelines Style System
+ * 基于 Apple 设计语言优化前端 UI
+ */
+
+/* ============================================
+   1. Apple 设计变量 (Design Tokens)
+   ============================================ */
+
+:root {
+  /* Apple 系统色彩 */
+  --apple-blue: #007AFF;
+  --apple-green: #34C759;
+  --apple-red: #FF3B30;
+  --apple-orange: #FF9500;
+  --apple-yellow: #FFCC00;
+  --apple-purple: #AF52DE;
+  --apple-pink: #FF2D55;
+  --apple-gray: #8E8E93;
+  --apple-gray-2: #AEAEB2;
+  --apple-gray-3: #C7C7CC;
+  --apple-gray-4: #D1D1D6;
+  --apple-gray-5: #E5E5EA;
+  --apple-gray-6: #F2F2F7;
+
+  /* 背景与文本 */
+  --apple-bg: #FFFFFF;
+  --apple-bg-secondary: #F2F2F7;
+  --apple-text: #1D1D1F;
+  --apple-text-secondary: #86868B;
+  --apple-separator: #C6C6C8;
+
+  /* 圆角半径 */
+  --apple-radius-xs: 6px;
+  --apple-radius-sm: 8px;
+  --apple-radius-md: 10px;
+  --apple-radius-lg: 12px;
+  --apple-radius-xl: 16px;
+  --apple-radius-full: 9999px;
+
+  /* 间距 */
+  --apple-spacing-xs: 4px;
+  --apple-spacing-sm: 8px;
+  --apple-spacing-md: 16px;
+  --apple-spacing-lg: 24px;
+  --apple-spacing-xl: 32px;
+
+  /* 字体 */
+  --apple-font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  --apple-font-size-xs: 11px;
+  --apple-font-size-sm: 13px;
+  --apple-font-size-base: 15px;
+  --apple-font-size-lg: 17px;
+  --apple-font-size-xl: 20px;
+  --apple-font-size-2xl: 24px;
+  --apple-font-size-3xl: 28px;
+
+  /* 阴影 - Apple 风格柔和阴影 */
+  --apple-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --apple-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --apple-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ============================================
+   2. 全局基础样式
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--apple-font);
+  font-size: var(--apple-font-size-base);
+  line-height: 1.5;
+  color: var(--apple-text);
+  background: var(--apple-bg-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   3. Apple 风格 Ant Design 覆盖
+   ============================================ */
+
+/* 按钮优化 */
+.ant-btn {
+  font-family: var(--apple-font);
+  font-weight: 500;
+  border-radius: var(--apple-radius-md) !important;
+  transition: all 0.2s ease;
+}
+
+.ant-btn-primary {
+  background: var(--apple-blue) !important;
+  border-color: var(--apple-blue) !important;
+}
+
+.ant-btn-primary:hover {
+  background: #0066d6 !important;
+  border-color: #0066d6 !important;
+  transform: translateY(-1px);
+  box-shadow: var(--apple-shadow-md);
+}
+
+.ant-btn-default {
+  background: var(--apple-bg) !important;
+  border-color: var(--apple-gray-5) !important;
+}
+
+.ant-btn-default:hover {
+  background: var(--apple-gray-6) !important;
+  border-color: var(--apple-gray-4) !important;
+}
+
+/* 输入框优化 */
+.ant-input,
+.ant-input-affix-wrapper {
+  font-family: var(--apple-font);
+  border-radius: var(--apple-radius-sm) !important;
+  border-color: var(--apple-gray-5) !important;
+}
+
+.ant-input:focus,
+.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--apple-blue) !important;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15) !important;
+}
+
+/* 搜索框圆角 */
+.ant-input-search .ant-input {
+  border-radius: var(--apple-radius-md) !important;
+}
+
+/* 菜单优化 */
+.ant-menu {
+  font-family: var(--apple-font);
+  border: none !important;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+.ant-menu-item {
+  border-radius: var(--apple-radius-sm) !important;
+  margin: 0 var(--apple-spacing-xs) !important;
+}
+
+.ant-menu-item-selected {
+  background: var(--apple-blue) !important;
+  color: white !important;
+}
+
+/* 侧边栏菜单 */
+.ant-menu-inline {
+  background: transparent !important;
+}
+
+.ant-menu-inline .ant-menu-item {
+  margin: 2px 0 !important;
+  border-radius: var(--apple-radius-sm) !important;
+}
+
+/* 卡片优化 */
+.ant-card {
+  font-family: var(--apple-font);
+  border-radius: var(--apple-radius-lg) !important;
+  border: 1px solid var(--apple-gray-5) !important;
+  box-shadow: var(--apple-shadow-sm) !important;
+  transition: all 0.2s ease;
+}
+
+.ant-card:hover {
+  box-shadow: var(--apple-shadow-md) !important;
+  transform: translateY(-2px);
+}
+
+/* 标签页优化 */
+.ant-tabs-nav::before {
+  border-bottom-color: var(--apple-gray-5) !important;
+}
+
+.ant-tabs-tab {
+  font-family: var(--apple-font);
+  font-weight: 500;
+  padding: var(--apple-spacing-sm) var(--apple-spacing-md) !important;
+  margin: 0 !important;
+  border-radius: var(--apple-radius-sm) var(--apple-radius-sm) 0 0 !important;
+}
+
+.ant-tabs-tab-active {
+  color: var(--apple-blue) !important;
+}
+
+.ant-tabs-ink-bar {
+  background: var(--apple-blue) !important;
+  border-radius: 2px !important;
+}
+
+/* 模态框优化 */
+.ant-modal-content {
+  border-radius: var(--apple-radius-xl) !important;
+  overflow: hidden;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid var(--apple-gray-5) !important;
+}
+
+.ant-modal-footer {
+  border-top: 1px solid var(--apple-gray-5) !important;
+}
+
+/* 抽屉优化 */
+.ant-drawer-content {
+  border-radius: var(--apple-radius-xl) 0 0 var(--apple-radius-xl) !important;
+}
+
+/* 表格优化 */
+.ant-table {
+  font-family: var(--apple-font);
+  border-radius: var(--apple-radius-lg) !important;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background: var(--apple-gray-6) !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid var(--apple-gray-5) !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--apple-gray-5) !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: var(--apple-gray-6) !important;
+}
+
+/* 标签优化 */
+.ant-tag {
+  font-family: var(--apple-font);
+  border-radius: var(--apple-radius-full) !important;
+  padding: 2px 10px !important;
+  font-weight: 500;
+  font-size: var(--apple-font-size-xs);
+}
+
+/* 头像优化 */
+.ant-avatar {
+  border-radius: 50% !important;
+}
+
+/* 徽章优化 */
+.ant-badge-status-dot {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+/* ============================================
+   4. Apple 风格组件类
+   ============================================ */
+
+/* Apple 卡片容器 */
+.apple-card {
+  background: var(--apple-bg);
+  border-radius: var(--apple-radius-lg);
+  border: 1px solid var(--apple-gray-5);
+  padding: var(--apple-spacing-md);
+  box-shadow: var(--apple-shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.apple-card:hover {
+  box-shadow: var(--apple-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Apple 状态标签 */
+.apple-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--apple-radius-full);
+  font-size: var(--apple-font-size-xs);
+  font-weight: 600;
+}
+
+.apple-status--active {
+  background: rgba(52, 199, 89, 0.15);
+  color: var(--apple-green);
+}
+
+.apple-status--pending {
+  background: rgba(255, 149, 0, 0.15);
+  color: var(--apple-orange);
+}
+
+.apple-status--inactive {
+  background: rgba(142, 142, 147, 0.15);
+  color: var(--apple-gray);
+}
+
+.apple-status__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Apple 导航项 */
+.apple-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing-sm);
+  padding: var(--apple-spacing-sm) var(--apple-spacing-md);
+  border-radius: var(--apple-radius-sm);
+  color: var(--apple-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.apple-nav-item:hover {
+  background: var(--apple-gray-6);
+}
+
+.apple-nav-item--active {
+  background: var(--apple-bg);
+  font-weight: 600;
+  box-shadow: var(--apple-shadow-sm);
+}
+
+/* Apple 筛选器 */
+.apple-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--apple-spacing-xs);
+  padding: 4px;
+  background: var(--apple-gray-6);
+  border-radius: var(--apple-radius-md);
+}
+
+.apple-filter__item {
+  padding: 6px 14px;
+  border-radius: var(--apple-radius-xs);
+  font-size: var(--apple-font-size-sm);
+  color: var(--apple-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.apple-filter__item:hover {
+  color: var(--apple-text);
+}
+
+.apple-filter__item--active {
+  background: var(--apple-bg);
+  font-weight: 600;
+  box-shadow: var(--apple-shadow-sm);
+}
+
+/* Apple 信息行 */
+.apple-info-row {
+  display: flex;
+  align-items: center;
+  padding: var(--apple-spacing-sm) 0;
+}
+
+.apple-info-row__label {
+  width: 100px;
+  color: var(--apple-text-secondary);
+  font-size: var(--apple-font-size-base);
+}
+
+.apple-info-row__value {
+  flex: 1;
+  color: var(--apple-text);
+  font-size: var(--apple-font-size-base);
+  font-weight: 500;
+}
+
+/* Apple 统计数字 */
+.apple-stat {
+  text-align: center;
+}
+
+.apple-stat__value {
+  font-size: var(--apple-font-size-2xl);
+  font-weight: 700;
+  color: var(--apple-text);
+  line-height: 1.2;
+}
+
+.apple-stat__label {
+  font-size: var(--apple-font-size-xs);
+  color: var(--apple-text-secondary);
+  margin-top: 4px;
+}
+
+/* Apple 分隔线 */
+.apple-divider {
+  height: 1px;
+  background: var(--apple-gray-5);
+  margin: var(--apple-spacing-md) 0;
+}
+
+/* Apple 标题 */
+.apple-title {
+  font-size: var(--apple-font-size-3xl);
+  font-weight: 700;
+  color: var(--apple-text);
+  letter-spacing: -0.5px;
+}
+
+/* Apple 副标题 */
+.apple-subtitle {
+  font-size: var(--apple-font-size-sm);
+  color: var(--apple-text-secondary);
+}

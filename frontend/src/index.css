@@ -1,0 +1,70 @@
+/* Apple Design System - 全局样式 */
+@import './styles/apple-design.css';
+
+/* 基础重置 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1D1D1F;
+  background: #F2F2F7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: #1D1D1F;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Apple 风格标题 */
+h1 {
+  font-size: 28px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: -0.3px;
+}
+
+/* Apple 风格滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C7C7CC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #AEAEB2;
+}
+
+/* Apple 风格选中效果 */
+::selection {
+  background: rgba(0, 122, 255, 0.3);
+}
